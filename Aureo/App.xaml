@@ -4,6 +4,18 @@
              xmlns:local="clr-namespace:Aureo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <ResourceDictionary>
+            
+            <!-- 
+            Global Resources. 
+            Views use {DynamicResource} so themes can be swapped at runtime. 
+            -->
+            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/DarkTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
     </Application.Resources>
 </Application>

@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- 
+    Colors use #AARRGGBB (AA = opacity). 
+    Keep all x:Key values identical across themes 
+    -->
+
+    <!-- Surface & Typography -->
+    <SolidColorBrush x:Key="BackgroundBrush" Color="#FF0B1120"/>
+    <SolidColorBrush x:Key="CardSurfaceBrush" Color="#99162038"/>
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="#FFF5F5F7"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#FF94A3B8"/>
+    
+    <!-- Semantic Highlights -->
+    <SolidColorBrush x:Key="IncomeBrush" Color="#FF30D158"/>
+    <SolidColorBrush x:Key="OutcomeBrush" Color="#FFFF453A"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="#FFFFD60A"/>
+    <SolidColorBrush x:Key="CardBorderBrush" Color="#26FFFFFF"/>
+
+</ResourceDictionary>
