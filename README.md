@@ -42,7 +42,7 @@ Aureo/
 
 ## Development Roadmap
 
-- [ ] **Phase 0:** MVVM folder structure and dynamic theme dictionary (`DarkTheme.xaml`)
+- [x] **Phase 0:** MVVM folder structure and dynamic theme dictionary (`DarkTheme.xaml`)
 - [ ] **Phase 1:** Core domain models and local JSON persistence (`StorageService`)
 - [ ] **Phase 2:** Main shell layout, floating pill navigation dock, and dynamic greeting view
 - [ ] **Phase 3:** User profile, multi-bank CRUD, inter-account transfers, and manual backup
