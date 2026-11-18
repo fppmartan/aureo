@@ -11,7 +11,7 @@ namespace Aureo.Models
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Name { get; set; } = string.Empty;
-        public bool IsReserve { get; set; } = false;
+        public bool IsReserve { get; set; } = false; // Indicates whether the account is a reserve account (e.g., for emergency funds).
         public decimal Balance { get; set; } = 0m;
     }
 }
