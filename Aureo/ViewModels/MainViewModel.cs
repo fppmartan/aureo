@@ -15,8 +15,8 @@ namespace Aureo.ViewModels
         private readonly StorageService _storageService; // Reads/saves local data.
         private AppData _appData; // Holds loaded data in memory.
         private string _currentSection = "Home"; // Tracks the active screen/tab.
-        private string _greetingMessage = string.Empty; // Backing field for Greeting.
-        private string _smartAlertMessage = string.Empty; // Backing field for StatusMessage.
+        private string _greetingMessage = string.Empty; // Backing field for GreetingMessage.
+        private string _smartAlertMessage = string.Empty; // Backing field for SmartAlertMessage.
 
         public string CurrentSection
         {
@@ -62,7 +62,7 @@ namespace Aureo.ViewModels
             // Ternary chain: if < 12 Morning, else if < 18 Afternoon, else Evening.
             string prefix = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
 
-            string? userName = _appData?.Profile?.Name; // Safely access the user's name even if _data or User is null.
+            string? userName = _appData?.Profile?.Name; // Safely access the user's name even if _appData or Profile is null.
             return string.IsNullOrWhiteSpace(userName) ? $"{prefix}." : $"{prefix}, {userName}."; // Adds name if available.
         }
 
@@ -80,7 +80,7 @@ namespace Aureo.ViewModels
                     if (subcategory.RenewalDay is int renewalDay) 
                     {
                         DateTime nextRenewal = GetNextRenewalDay(renewalDay, today);
-                        int daysLeft = (nextRenewal - today).Days; // Exact days acrros month/year boundaries.
+                        int daysLeft = (nextRenewal - today).Days; // Exact days across month/year boundaries.
                         if (daysLeft == 0) return $"{subcategory.Name} is due today.";
                         if (daysLeft > 0 && daysLeft <= 5 && daysLeft < minDaysLeft) 
                         {
@@ -91,7 +91,7 @@ namespace Aureo.ViewModels
                 }
             }
 
-            return smartAlertMessage ?? "No bills due today."; //Default fallback when nothing is due soon.
+            return smartAlertMessage ?? "No bills due today."; // Default fallback when nothing is due soon.
         }
 
         private DateTime GetNextRenewalDay(int renewalDay, DateTime today) 
