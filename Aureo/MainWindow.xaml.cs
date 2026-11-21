@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Aureo.ViewModels;
 
 namespace Aureo
 {
@@ -6,7 +7,8 @@ namespace Aureo
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); // Builds the XAML visual tree.
+            DataContext = new MainViewModel(); // Binds expressions to this ViewModel.
         }
     }
 }
