@@ -44,7 +44,7 @@ Aureo/
 
 - [x] **Phase 0:** MVVM folder structure and dynamic theme dictionary (`DarkTheme.xaml`)
 - [x] **Phase 1:** Core domain models and local JSON persistence (`StorageService`)
-- [ ] **Phase 2:** Main shell layout, floating pill navigation dock, and dynamic greeting view
+- [x] **Phase 2:** Main shell layout, floating pill navigation dock, and dynamic greeting view
 - [ ] **Phase 3:** User profile, multi-bank CRUD, inter-account transfers, and manual backup
 - [ ] **Phase 4:** Category carousel selector, animated subcategory bottom sheet, and installment generator
 - [ ] **Phase 5:** General view analytics and monthly evolution charts
@@ -56,7 +56,7 @@ Aureo/
 
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/fppmartan/aureo.git](https://github.com/fppmartan/aureo.git)
+   git clone https://github.com/fppmartan/aureo.git
    ```
 2. Open `Aureo.sln` in **Visual Studio 2022/2026** with the **.NET Desktop Development** workload installed.
 3. Press **F5** (or click **Start**) to build and run the application.
