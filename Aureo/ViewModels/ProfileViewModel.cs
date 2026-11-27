@@ -6,6 +6,9 @@ using Microsoft.Win32;
 
 namespace Aureo.ViewModels
 {
+    /// <summary>
+    /// Manages profile settings, avatar selection, theme switching, and backup operations.
+    /// </summary>
     public class ProfileViewModel : BaseViewModel
     {
         private readonly StorageService _storageService;
