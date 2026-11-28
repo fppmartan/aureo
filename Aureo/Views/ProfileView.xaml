@@ -1,0 +1,253 @@
+﻿<UserControl x:Class="Aureo.Views.ProfileView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24">
+        <StackPanel MaxWidth="760" HorizontalAlignment="Center">
+            <TextBlock Text="{Binding StatusMessage}"
+                       Foreground="{DynamicResource AccentBrush}"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,16"/>
+
+            <!-- Card 1: Profile Info -->
+            <Border Background="{DynamicResource CardSurfaceBrush}"
+                    BorderBrush="{DynamicResource CardBorderBrush}"
+                    BorderThickness="1" 
+                    CornerRadius="16" 
+                    Padding="20" 
+                    Margin="0,0,0,16">
+                
+                <StackPanel>
+                    <TextBlock Text="Profile Info" 
+                               FontSize="18" 
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource TextPrimaryBrush}" 
+                               Margin="0,0,0,12"/>
+
+                    <TextBlock Text="Name" 
+                               Foreground="{DynamicResource TextSecondaryBrush}" 
+                               Margin="0,0,0,4"/>
+
+                    <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                             Background="{DynamicResource BackgroundBrush}"
+                             Foreground="{DynamicResource TextPrimaryBrush}"
+                             BorderBrush="{DynamicResource CardBorderBrush}"
+                             Padding="10,8" Margin="0,0,0,12"/>
+
+
+                    <TextBlock Text="Profession" 
+                               Foreground="{DynamicResource TextSecondaryBrush}" 
+                               Margin="0,0,0,4"/>
+                    
+                    <TextBox Text="{Binding Profession, UpdateSourceTrigger=PropertyChanged}"
+                             Background="{DynamicResource BackgroundBrush}"
+                             Foreground="{DynamicResource TextPrimaryBrush}"
+                             BorderBrush="{DynamicResource CardBorderBrush}"
+                             Padding="10,8" 
+                             Margin="0,0,0,12"/>
+
+                    <TextBlock Text="Base Salary" 
+                               Foreground="{DynamicResource TextSecondaryBrush}" 
+                               Margin="0,0,0,4"/>
+                    
+                    <TextBox Text="{Binding SalaryInput, UpdateSourceTrigger=PropertyChanged}"
+                             Background="{DynamicResource BackgroundBrush}"
+                             Foreground="{DynamicResource TextPrimaryBrush}"
+                             BorderBrush="{DynamicResource CardBorderBrush}"
+                             Padding="10,8" 
+                             Margin="0,0,0,12"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Select Photo" Command="{Binding SelectPhotoCommand}"
+                                Background="{DynamicResource BackgroundBrush}"
+                                Foreground="{DynamicResource TextPrimaryBrush}"
+                                BorderBrush="{DynamicResource CardBorderBrush}"
+                                Padding="14,8" Margin="0,0,10,0" Cursor="Hand"/>
+                        <Button Content="Save Profile" Command="{Binding SaveProfileCommand}"
+                                Background="{DynamicResource AccentBrush}"
+                                Foreground="{DynamicResource BackgroundBrush}"
+                                FontWeight="SemiBold" BorderThickness="0"
+                                Padding="14,8" Cursor="Hand"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Card 2: Appearance & Backup -->
+            <Border Background="{DynamicResource CardSurfaceBrush}"
+                    BorderBrush="{DynamicResource CardBorderBrush}"
+                    BorderThickness="1" 
+                    CornerRadius="16" 
+                    Padding="20" 
+                    Margin="0,0,0,16">
+                <StackPanel>
+
+                    <TextBlock Text="Appearance &amp; Backup" 
+                               FontSize="18" 
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,12"/>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Button Content="Toggle Theme" 
+                                Command="{Binding ToggleThemeCommand}"
+                                Background="{DynamicResource BackgroundBrush}"
+                                Foreground="{DynamicResource TextPrimaryBrush}"
+                                BorderBrush="{DynamicResource CardBorderBrush}"
+                                Padding="14,8" Margin="0,0,10,0" Cursor="Hand"/>
+
+                        <Button Content="Export Backup" Command="{Binding ExportBackupCommand}"
+                                Background="{DynamicResource BackgroundBrush}"
+                                Foreground="{DynamicResource TextPrimaryBrush}"
+                                BorderBrush="{DynamicResource CardBorderBrush}"
+                                Padding="14,8" Margin="0,0,10,0" Cursor="Hand"/>
+
+                        <Button Content="Restore Backup" Command="{Binding RestoreBackupCommand}"
+                                Background="{DynamicResource BackgroundBrush}"
+                                Foreground="{DynamicResource TextPrimaryBrush}"
+                                BorderBrush="{DynamicResource CardBorderBrush}"
+                                Padding="14,8" Cursor="Hand"/>
+
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Card 3: Bank Accounts CRUD -->
+            <Border Background="{DynamicResource CardSurfaceBrush}"
+                    BorderBrush="{DynamicResource CardBorderBrush}"
+                    BorderThickness="1" 
+                    CornerRadius="16" 
+                    Padding="20" 
+                    Margin="0,0,0,16">
+
+                <StackPanel>
+                    <TextBlock Text="Bank Accounts" 
+                               FontSize="18" 
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource TextPrimaryBrush}" 
+                               Margin="0,0,0,12"/>
+
+                    <TextBlock Text="Account Name" 
+                               Foreground="{DynamicResource TextSecondaryBrush}" 
+                               Margin="0,0,0,4"/>
+
+                    <TextBox Text="{Binding AccountName, UpdateSourceTrigger=PropertyChanged}"
+                             Background="{DynamicResource BackgroundBrush}"
+                             Foreground="{DynamicResource TextPrimaryBrush}"
+                             BorderBrush="{DynamicResource CardBorderBrush}"
+                             Padding="10,8" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Initial / Current Balance" 
+                               Foreground="{DynamicResource TextSecondaryBrush}" 
+                               Margin="0,0,0,4"/>
+                    
+                    <TextBox Text="{Binding AccountBalanceInput, UpdateSourceTrigger=PropertyChanged}"
+                             Background="{DynamicResource BackgroundBrush}"
+                             Foreground="{DynamicResource TextPrimaryBrush}"
+                             BorderBrush="{DynamicResource CardBorderBrush}"
+                             Padding="10,8" Margin="0,0,0,10"/>
+
+                    <CheckBox Content="Reserve Account" IsChecked="{Binding AccountIsReserve}"
+                              Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,12"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+
+                        <Button Content="Save Account" 
+                                Command="{Binding SaveAccountCommand}"
+                                Background="{DynamicResource AccentBrush}"
+                                Foreground="{DynamicResource BackgroundBrush}"
+                                FontWeight="SemiBold" 
+                                BorderThickness="0"
+                                Padding="14,8" 
+                                Margin="0,0,10,0" 
+                                Cursor="Hand"/>
+
+                        <Button Content="New / Clear" Command="{Binding ClearAccountFormCommand}"
+                                Background="{DynamicResource BackgroundBrush}"
+                                Foreground="{DynamicResource TextPrimaryBrush}"
+                                BorderBrush="{DynamicResource CardBorderBrush}"
+                                Padding="14,8" Cursor="Hand"/>
+                    </StackPanel>
+
+                    <ListBox ItemsSource="{Binding Accounts}" SelectedItem="{Binding SelectedAccount}"
+                             Background="{DynamicResource BackgroundBrush}"
+                             BorderBrush="{DynamicResource CardBorderBrush}" MaxHeight="180">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding Name}"
+                                               Foreground="{DynamicResource TextPrimaryBrush}" 
+                                               VerticalAlignment="Center"/>
+
+                                    <TextBlock Grid.Column="1" Text="{Binding Balance, StringFormat=F2}"
+                                               Foreground="{DynamicResource TextSecondaryBrush}" 
+                                               Margin="12,0" 
+                                               VerticalAlignment="Center"/>
+
+                                    <Button Grid.Column="2" Content="Delete"
+                                            Command="{Binding DataContext.DeleteAccountCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"
+                                            Background="Transparent" Foreground="{DynamicResource OutcomeBrush}"
+                                            BorderThickness="0" Cursor="Hand"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </Border>
+
+            <!-- Card 4: Inter-Account Transfer -->
+            <Border Background="{DynamicResource CardSurfaceBrush}"
+                    BorderBrush="{DynamicResource CardBorderBrush}"
+                    BorderThickness="1" CornerRadius="16" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Transfer" 
+                               FontSize="18" 
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource TextPrimaryBrush}" 
+                               Margin="0,0,0,12"/>
+
+                    <TextBlock Text="From Account" 
+                               Foreground="{DynamicResource TextSecondaryBrush}" 
+                               Margin="0,0,0,4"/>
+                    <ComboBox ItemsSource="{Binding Accounts}" SelectedItem="{Binding SourceAccount}"
+                              DisplayMemberPath="Name" 
+                              Margin="0,0,0,10"/>
+
+                    <TextBlock Text="To Account" 
+                               Foreground="{DynamicResource TextSecondaryBrush}" 
+                               Margin="0,0,0,4"/>
+
+                    <ComboBox ItemsSource="{Binding Accounts}" SelectedItem="{Binding DestinationAccount}"
+                              DisplayMemberPath="Name" 
+                              Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Amount" 
+                               Foreground="{DynamicResource TextSecondaryBrush}" 
+                               Margin="0,0,0,4"/>
+
+                    <TextBox Text="{Binding TransferAmountInput, UpdateSourceTrigger=PropertyChanged}"
+                             Background="{DynamicResource BackgroundBrush}"
+                             Foreground="{DynamicResource TextPrimaryBrush}"
+                             BorderBrush="{DynamicResource CardBorderBrush}"
+                             Padding="10,8" Margin="0,0,0,12"/>
+
+                    <Button Content="Transfer" Command="{Binding TransferCommand}"
+                            Background="{DynamicResource AccentBrush}"
+                            Foreground="{DynamicResource BackgroundBrush}"
+                            FontWeight="SemiBold" 
+                            BorderThickness="0"
+                            Padding="14,8" 
+                            HorizontalAlignment="Left" 
+                            Cursor="Hand"/>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
